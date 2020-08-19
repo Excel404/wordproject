@@ -1,0 +1,5 @@
+#Problem-solving
+**Problem statement**- As a researcher in Pharmacognosy(dealing with medicinal agents from nature), you might see a plant which you cannot identify with neither the common name or botanical name. This bottleneck has made a lot of people ignorant of the plants around their vicinity.
+**Problem solving**- To solve the problem, one can create an array containing the images of all the plant plants, their leaves, flowers(if any),  stem bark, fruits etc.
+Another array containing both the common name, botanical name and the picture of the plant, It's leaves, stem bark etc.
+The program uses a visual identification system (maybe a camera) that allows the individual to capture images of various parts of the plant and checks the arrays containing the images of the various parts of the plants. If it finds a match it displays/logs the information contained in the other array( i.e the array containing the names of the plant, pictures etc.).

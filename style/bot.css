@@ -1,0 +1,55 @@
+h1{
+  color:white;background-color:red;
+}
+#button1{
+  background-color:blue;
+}
+.you{
+  background-color:blue;
+}
+.me{
+  background-color:green;
+}
+.chat-interface{
+  background-color: lightgreen;
+  width:350px;
+  height:350px;
+  padding: 10px;
+}
+.message-box{
+  background-color:lightgrey;
+  color:lightgreen;
+  width:320px;
+  height:300px;
+  padding-top:10px;
+  padding-left:10px;
+  padding-right:10px;
+  margin:centre;
+  overflow: scroll;
+}
+.send-button{
+  height:30px;
+  color:blue;
+  background-color:green;
+}
+.input-box{
+  width:300px;
+  height:30px;
+}
+.box{
+  height:20px;
+  color:black;
+  min-height: 30px;
+}
+.text-send{
+  padding:5px;
+  
+  float:left;
+  margin-right: 10px;
+}
+.text-receive{
+  padding:5px;
+  
+  float:right;
+  margin-left: 10px;
+}

@@ -1,0 +1,37 @@
+
+td{
+    border-width: 1px;
+    border-style: solid;
+    width: 100px;
+}
+th{
+    border-width: 1px;
+    border-style: solid;
+    width: 100px;
+    background-color:darkslategrey;
+    color: goldenrod;
+}
+input{
+    color: white;
+    background-color:darkslategrey;
+    width: 150px;
+}
+.result-box{
+    width: 50px;
+    height: 20px;
+    color:goldenrod;
+}
+.calc-Gp{
+    float: right;
+    background-color: goldenrod;
+}
+.label{
+    color: goldenrod;
+    position: relative;
+    left:
+}
+.last-row{
+    background-color: darkslategrey;
+    width: 468px;  
+    height: 30px; 
+}

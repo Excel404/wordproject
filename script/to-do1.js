@@ -1,6 +1,7 @@
 //document.write("My ToDo List");
-var self =this;
+
 function ToDo(){
+  var self =this;
   self.listInterface = document.createElement("div");
   self.listInterface.setAttribute("class","list-interface");
   self.header = document.createElement("h2");

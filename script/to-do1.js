@@ -1,62 +1,61 @@
 //document.write("My ToDo List");
 
 function ToDo(){
-  var self =this;
-  self.listInterface = document.createElement("div");
-  self.listInterface.setAttribute("class","list-interface");
-  self.header = document.createElement("h2");
-  self.header.setAttribute("class","header");
-  self.header.innerHTML = "My ToDo List";
-  self.listInterface.appendChild(self.header);
-  self.inputBox = document.createElement("input");
-  self.inputBox.setAttribute("type", "text");
-  self.inputBox.setAttribute("class", "input-box");
-  self.inputBox.setAttribute("placeholder", "Type your activity here");
-  self.addList= document.createElement("button");
-  self.addList.setAttribute("class","add-list");
+  this.listInterface = document.createElement("div");
+  this.listInterface.setAttribute("class","list-interface");
+  this.header = document.createElement("h2");
+  this.header.setAttribute("class","header");
+  this.header.innerHTML = "My ToDo List";
+  this.listInterface.appendChild(self.header);
+  this.inputBox = document.createElement("input");
+  this.inputBox.setAttribute("type", "text");
+  this.inputBox.setAttribute("class", "input-box");
+  this.inputBox.setAttribute("placeholder", "Type your activity here");
+  this.addList= document.createElement("button");
+  this.addList.setAttribute("class","add-list");
   
 
-  self.addList.innerHTML = "Add";
-  self.listInterface.appendChild(self.inputBox);
-  self.listInterface.appendChild(self.addList);
-  document.body.appendChild(self.listInterface);
-  self.removeList = document.createElement("button");
-  self.removeList.setAttribute("class", "remove-list");
-  self.removeList.innerHTML ="Clear All"
+  this.addList.innerHTML = "Add";
+  this.listInterface.appendChild(this.inputBox);
+  this.listInterface.appendChild(this.addList);
+  document.body.appendChild(this.listInterface);
+  this.removeList = document.createElement("button");
+  this.removeList.setAttribute("class", "remove-list");
+  this.removeList.innerHTML ="Clear All"
   
-  self.listInterface.appendChild(self.removeList);
-  self.addList.addEventListener("click",CreateToDo);
+  this.listInterface.appendChild(this.removeList);
+  this.addList.addEventListener("click",CreateToDo);
   
   function CreateToDo(){
-    self.boxInterface = document.createElement("div");
-    self.listBox= document.createElement("div");
-    self.listBox.setAttribute("class","list-box");
-    self.checkBox = document.createElement("input");
-    self.checkBox.setAttribute("type","checkbox");
-    self.checkBox.setAttribute("class","check-box");
-    var message = self.inputBox.value;
-    self.listSpan = document.createElement("span");
-    self.listSpan.setAttribute("class","list-span");
-    self.listSpan.innerHTML =message;
+    this.boxInterface = document.createElement("div");
+    this.listBox= document.createElement("div");
+    this.listBox.setAttribute("class","list-box");
+    this.checkBox = document.createElement("input");
+    this.checkBox.setAttribute("type","checkbox");
+    this.checkBox.setAttribute("class","check-box");
+    var message = this.inputBox.value;
+    this.listSpan = document.createElement("span");
+    this.listSpan.setAttribute("class","list-span");
+    this.listSpan.innerHTML =message;
     //self.listSpan.style.backgroundColor ='blue';
-    self.clearButton= document.createElement("button");
-    self.clearButton.setAttribute("class","clear-button");
-    self.clearButton.innerHTML= "Clear";
+    this.clearButton= document.createElement("button");
+    this.clearButton.setAttribute("class","clear-button");
+    this.clearButton.innerHTML= "Clear";
     
     //self.clearButton.setAttribute("")
    
     
-    self.listBox.appendChild(self.checkBox);
-    self.listBox.appendChild(self.listSpan);
-    self.listBox.appendChild(self.clearButton);
-    self.boxInterface.appendChild(self.listBox);
-    self.listInterface.appendChild(self.boxInterface);
+    this.listBox.appendChild(this.checkBox);
+    this.listBox.appendChild(this.listSpan);
+    this.listBox.appendChild(this.clearButton);
+    this.boxInterface.appendChild(this.listBox);
+    this.listInterface.appendChild(this.boxInterface);
     
-    self.removeList.addEventListener("click",function(){
-      self.boxInterface.style.display= "none";
+    this.removeList.addEventListener("click",function(){
+      this.boxInterface.style.display= "none";
     });
-    self.clearButton.addEventListener("click", function(){
-      self.listBox.style.display="none";
+    this.clearButton.addEventListener("click", function(){
+      this.listBox.style.display="none";
     })
     
     

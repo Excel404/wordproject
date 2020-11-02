@@ -24,9 +24,9 @@ function ToDo(){
   this.removeList.innerHTML ="Clear All"
   
   this.listInterface.appendChild(this.removeList);
-  this.addList.addEventListener("click",CreateToDo);
+  this.addList.addEventListener("click",this.createToDo);
   
-  function CreateToDo(){
+  this.createToDo(){
     this.boxInterface = document.createElement("div");
     this.listBox= document.createElement("div");
     this.listBox.setAttribute("class","list-box");

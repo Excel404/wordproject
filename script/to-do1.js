@@ -1,4 +1,3 @@
-//document.write("My ToDo List");
 
 function ToDo(){
   this.listInterface = document.createElement("div");
@@ -6,7 +5,7 @@ function ToDo(){
   this.header = document.createElement("h2");
   this.header.setAttribute("class","header");
   this.header.innerHTML = "My ToDo List";
-  this.listInterface.appendChild(self.header);
+  this.listInterface.appendChild(this.header);
   this.inputBox = document.createElement("input");
   this.inputBox.setAttribute("type", "text");
   this.inputBox.setAttribute("class", "input-box");
@@ -24,9 +23,12 @@ function ToDo(){
   this.removeList.innerHTML ="Clear All"
   
   this.listInterface.appendChild(this.removeList);
-  this.addList.addEventListener("click",this.createToDo);
+  var self = this;
+  this.addList.addEventListener("click",function(e){
+    e.preventDefault();
+    self.createToDo()});
   
-  this.createToDo(){
+  this.createToDo = function(){
     this.boxInterface = document.createElement("div");
     this.listBox= document.createElement("div");
     this.listBox.setAttribute("class","list-box");
@@ -52,10 +54,11 @@ function ToDo(){
     this.listInterface.appendChild(this.boxInterface);
     
     this.removeList.addEventListener("click",function(){
-      this.boxInterface.style.display= "none";
+      self.boxInterface.style.display= "none";
     });
-    this.clearButton.addEventListener("click", function(){
-      this.listBox.style.display="none";
+    this.clearButton.addEventListener("click", function(e){
+      e.preventDefault();
+      self.listBox.style.display="none";
     })
     
     

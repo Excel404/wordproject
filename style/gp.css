@@ -14,21 +14,30 @@ th{
 input{
     color: white;
     background-color:darkslategrey;
-    width: 150px;
+    width: 100px;
 }
-.result-box{
+.result{
     width: 50px;
     height: 20px;
     color:goldenrod;
+    background-color: darkslategray;
 }
-.calc-Gp{
+.header{
+    align: justify;
+}
+.calc-gp{
     float: right;
     background-color: goldenrod;
 }
-.label{
-    color: goldenrod;
+.add-course{
+    background-color: goldenrod;
     position: relative;
-    left:
+}
+.display{
+    background-color:goldenrod;
+    width: 340px;
+    height: 450px;
+    overflow-y: scroll;
 }
 .last-row{
     background-color: darkslategrey;

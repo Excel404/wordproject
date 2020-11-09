@@ -10,7 +10,7 @@ var headerCol2 = document.createElement('th');
 headerCol2.innerHTML = 'Price per Item';
 var headerCol3 = document.createElement('th');
 headerCol3.innerHTML = 'Quantity of Item';
-var result = document.createElement('span');
+var result = document.createElement('div');
 result.setAttribute('class','result');
 var button1 = document.createElement('button');
 button1.setAttribute('class','new');
@@ -32,53 +32,9 @@ Interface.appendChild(Header);
 Interface.appendChild(button1);
 Interface.appendChild(button2);
 Interface.appendChild(headerRow);
-document.body.appendChild(Interface);
-document.body.appendChild(result);
 
-button1.addEventListener('click',()=>{
-    /*var item = prompt('item');
-    var price = prompt('price');
-    var quantity = prompt('quantity');*/
-    var item1 = new Sort(price, quantity);
-    price = parseInt(item1.innerCol2.value);
-    
-    var quantity = item1.innerCol3.value; 
-    if (price >50){
-        above50.push(item1);
-    }
-    else if (price == 50){
-        exactly50.push(item1);
-    }
-    else {
-        below50.push(item1);
-        
-    }   
-    console.log(price); 
-    
-})
-
-button2.addEventListener('click', ()=>{
-    let sumOfAbove50 = 0;
-    for (find of above50){
-        sumOfAbove50 += parseInt(find.innerCol3.value);
-    }
-    let sumOfExactly50 = 0;
-    for (find of exactly50){
-        sumOfExactly50 += parseInt(find.innerCol3.value);
-    }
-    let sumOfBelow50 = 0;
-    for (find of below50){
-        sumOfBelow50 += parseInt(find.innerCol3.value);
-    }
-    console.log(find.innerCol3.value);
-    console.log(sumOfBelow50,sumOfExactly50,sumOfAbove50);
-});
 class Sort{
-    constructor(price,quantity){
-        //this.price = price;
-        this.quantity = quantity;
-        this.amount = price*quantity
-        
+    constructor(){
         this.row1 = document.createElement('tr');
         this.col1 = document.createElement('td');
         this.innerCol1 = document.createElement('input');
@@ -89,7 +45,8 @@ class Sort{
         this.col3 = document.createElement('td');
         this.innerCol3 = document.createElement('input');
         this.innerCol3.setAttribute('type','text');
-        this.innerCol2.value = price;
+        this.button3 = document.createElement('button');
+        this.button3.innerHTML= 'Submit';
 
         this.col1.appendChild(this.innerCol1);
         this.row1.appendChild(this.col1);
@@ -97,9 +54,46 @@ class Sort{
         this.col2.appendChild(this.innerCol2);
         this.row1.appendChild(this.col3);
         this.col3.appendChild(this.innerCol3);
+        this.row1.appendChild(this.button3);
         Interface.appendChild(this.row1);
-        document.body.appendChild(Interface);
     }
 }
+
+button1.addEventListener('click',()=>{
+    var item1 = new Sort();
+    item1.button3.addEventListener('click', ()=>{
+        let price = parseInt(item1.innerCol2.value);
+        if (price >50){
+            above50.push(item1);
+        }
+        else if (price == 50){
+            exactly50.push(item1);
+        }
+        else if(price < 50){
+            below50.push(item1);   
+        }
+        item1.button3.innerHTML = 'submitted';
+    })
+             
+})
+
+button2.addEventListener('click', ()=>{
+    let sumOfAbove50 = 0;
+    for (item1 of above50){
+        sumOfAbove50 += parseInt(item1.innerCol3.value);
+    }
+    let sumOfExactly50 = 0;
+    for (item1 of exactly50){
+        sumOfExactly50 += parseInt(item1.innerCol3.value);
+    }
+    let sumOfBelow50 = 0;
+    for (item1 of below50){
+        sumOfBelow50 += parseInt(item1.innerCol3.value);
+    }
+    result.innerHTML = 'No of Items sold above #50 ='+ ' '+ sumOfAbove50 + '<br>' +
+    'No of items sold at #50 =' + ' ' + sumOfExactly50 + '<br>'+
+    'No of items sold below #50 =' + ' ' + sumOfBelow50;    
+});
+document.body.appendChild(Interface);
 document.body.appendChild(result);
 

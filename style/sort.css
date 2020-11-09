@@ -1,0 +1,41 @@
+
+td{
+    border-width: 1px;
+    border-style: solid;
+    width: 100px;
+}
+th{
+    border-width: 1px;
+    border-style: solid;
+    width: 100px;
+    background-color:darkslategrey;
+    color: goldenrod;
+}
+input{
+    color: white;
+    background-color:darkslategrey;
+    width: 110px;
+}
+.result{
+    width: 420px;
+    height: 60px;
+    color:goldenrod;
+    background-color: darkslategrey;
+}
+.display {
+    background-color:goldenrod;
+    width: 420px;
+    height: 450px;
+}
+.calc-Gp{
+    float: right;
+    background-color: goldenrod;
+}
+.header{
+    color: goldenrod;
+    
+}
+button{
+    background-color: goldenrod;
+    
+}

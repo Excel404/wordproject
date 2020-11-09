@@ -32,7 +32,7 @@ input{
     background-color: goldenrod;
 }
 .header{
-    color: goldenrod;
+    font-weight: bold;
     
 }
 button{

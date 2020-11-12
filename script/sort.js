@@ -1,99 +1,113 @@
-var Interface = document.createElement('div');
-Interface.setAttribute('class','display');
+var Interface1 = document.createElement('div');
+Interface1.setAttribute('class','display');
 var Header = document.createElement('span');
-Header.innerHTML ="Your Items Sorter" + "<br>";
+Header.innerHTML ="Your Sales Auditor" + "<br>";
 Header.setAttribute('class','header');
-var headerRow = document.createElement('tr');
-var headerCol1 = document.createElement('th');
-headerCol1.innerHTML = 'Item';
-var headerCol2 = document.createElement('th');
-headerCol2.innerHTML = 'Price per Item';
-var headerCol3 = document.createElement('th');
-headerCol3.innerHTML = 'Quantity of Item';
-var result = document.createElement('div');
-result.setAttribute('class','result');
-var button1 = document.createElement('button');
-button1.setAttribute('class','new');
-button1.innerHTML ='Add new object';
-var button2 = document.createElement('button');
-button2.setAttribute('class','sort');
-button2.innerHTML = 'Sort Item';
-var price;
-var quantity;
-var custom = [];
-var above50 = [];
-var exactly50 = [];
-var below50 = [];
+var button3 = document.createElement('button');
+button3.setAttribute('class','new-item');
+button3.innerHTML ='Add new Object';
+button3.addEventListener('click', NewItem);
+function NewItem(){
+    var Interface = document.createElement('div');
+    Interface.setAttribute('class','display');
+    var headerRow = document.createElement('tr');
+    var headerCol1 = document.createElement('th');
+    headerCol1.innerHTML = 'Unit selling price (Naira)';
+    var headerCol2 = document.createElement('th');
+    headerCol2.innerHTML = 'Quantity';
+    var result = document.createElement('div');
+    result.setAttribute('class','result');
+    var itemName = document.createElement('input');
+    itemName.setAttribute('type','text');
+    itemName.setAttribute('placeholder','Item Name');
+    var unitCost = document.createElement('input');
+    unitCost.setAttribute('type','text');
+    unitCost.setAttribute('placeholder','Cost Price');
+    var button1 = document.createElement('button');
+    button1.setAttribute('class','new');
+    button1.innerHTML ='Add new item';
+    var button2 = document.createElement('button');
+    button2.setAttribute('class','sort');
+    button2.innerHTML = 'Audit';
+    var price;
+    var quantity;
+    var custom = [];
 
-headerRow.appendChild(headerCol1);
-headerRow.appendChild(headerCol2);
-headerRow.appendChild(headerCol3);
-Interface.appendChild(Header);
-Interface.appendChild(button1);
-Interface.appendChild(button2);
-Interface.appendChild(headerRow);
+    headerRow.appendChild(headerCol1);
+    headerRow.appendChild(headerCol2);
+    Interface.appendChild(itemName);
+    Interface.appendChild(unitCost);
+    Interface.appendChild(button1);
+    Interface.appendChild(button2);
+    Interface.appendChild(headerRow);
 
-class Sort{
-    constructor(){
-        this.row1 = document.createElement('tr');
-        this.col1 = document.createElement('td');
-        this.innerCol1 = document.createElement('input');
-        this.innerCol1.setAttribute('type','text');
-        this.col2 = document.createElement('td');
-        this.innerCol2 = document.createElement('input');
-        this.innerCol2.setAttribute('type','text');
-        this.col3 = document.createElement('td');
-        this.innerCol3 = document.createElement('input');
-        this.innerCol3.setAttribute('type','text');
-        this.button3 = document.createElement('button');
-        this.button3.innerHTML= 'Submit';
+    class Sort{
+        constructor(){
+            this.row1 = document.createElement('tr');
+            this.col1 = document.createElement('td');
+            this.innerCol1 = document.createElement('input');
+            this.innerCol1.setAttribute('type','text');
+            this.col2 = document.createElement('td');
+            this.innerCol2 = document.createElement('input');
+            this.innerCol2.setAttribute('type','text');
 
-        this.col1.appendChild(this.innerCol1);
-        this.row1.appendChild(this.col1);
-        this.row1.appendChild(this.col2);
-        this.col2.appendChild(this.innerCol2);
-        this.row1.appendChild(this.col3);
-        this.col3.appendChild(this.innerCol3);
-        this.row1.appendChild(this.button3);
-        Interface.appendChild(this.row1);
+
+
+            this.col1.appendChild(this.innerCol1);
+            this.row1.appendChild(this.col1);
+            this.row1.appendChild(this.col2);
+            this.col2.appendChild(this.innerCol2);
+            Interface.appendChild(this.row1);
+        }
     }
-}
-
-button1.addEventListener('click',()=>{
-    var item1 = new Sort();
-    item1.button3.addEventListener('click', ()=>{
-        let price = parseInt(item1.innerCol2.value);
-        if (price >50){
-            above50.push(item1);
-        }
-        else if (price == 50){
-            exactly50.push(item1);
-        }
-        else if(price < 50){
-            below50.push(item1);   
-        }
-        item1.button3.innerHTML = 'submitted';
+    var item1;
+    button1.addEventListener('click',()=>{
+        item1 = new Sort();
+        custom.push(item1);
     })
-             
-})
 
-button2.addEventListener('click', ()=>{
-    let sumOfAbove50 = 0;
-    for (item1 of above50){
-        sumOfAbove50 += parseInt(item1.innerCol3.value);
-    }
-    let sumOfExactly50 = 0;
-    for (item1 of exactly50){
-        sumOfExactly50 += parseInt(item1.innerCol3.value);
-    }
-    let sumOfBelow50 = 0;
-    for (item1 of below50){
-        sumOfBelow50 += parseInt(item1.innerCol3.value);
-    }
-    result.innerHTML = 'No of Items sold above #50 ='+ ' '+ sumOfAbove50 + '<br>' +
-    'No of items sold at #50 =' + ' ' + sumOfExactly50 + '<br>'+
-    'No of items sold below #50 =' + ' ' + sumOfBelow50;    
-});
-document.body.appendChild(Interface);
-document.body.appendChild(result);
+    button2.addEventListener('click', ()=>{
+        var sumOfAbove50 = 0;
+        var sumOfExactly50 = 0;
+        var sumOfBelow50 = 0;
+        var totalProfit = 0;
+        var totalLoss = 0;
+        var profit = 0;
+        for (find of custom){
+            let price = parseInt(find.innerCol1.value);
+            let sum = parseInt(find.innerCol2.value)
+            let costPrice = parseInt(unitCost.value)
+            if (price > costPrice){
+                profit = price - costPrice;
+                sumOfAbove50 += sum ;
+                totalProfit += profit
+            }
+            else if(price < costPrice){
+                loss = costPrice - price;        
+                sumOfBelow50 += sum;
+                totalLoss += loss;
+            }
+            else {
+                sumOfExactly50 += sum;   
+            }
+
+        }
+        let name = itemName.value;
+        result.innerHTML = 'You sold'+ ' '+ sumOfAbove50 + " " + name + "with a profit of " + totalProfit +'<br>' +
+        'You sold'+ ' '+ sumOfBelow50 + ' ' + name + "at a loss of " + totalLoss +'<br>'+
+        'You sold'+ ' '+ sumOfExactly50 + " " + name + "at no profit or loss";
+        
+        
+            
+    });
+    var space = document.createElement('span');
+    space.innerHTML = '<br>';
+    Interface1.appendChild(Interface);
+    Interface1.appendChild(result);
+    Interface1.appendChild(space);
+}
+Interface1.appendChild(Header);
+Interface1.appendChild(button3);    
+document.body.appendChild(Interface1);
+
 

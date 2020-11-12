@@ -14,25 +14,38 @@ th{
 input{
     color: white;
     background-color:darkslategrey;
-    width: 110px;
+    width: 100px;
 }
 .result{
     width: 420px;
     height: 60px;
     color:goldenrod;
-    background-color: darkslategrey;
+    background-color: darkslategray;
 }
-.display {
-    background-color:goldenrod;
-    width: 420px;
-    height: 450px;
+.header{
+    font-size: x-large;
+    font-weight: bold;
+    color: darkslategrey;
 }
-.calc-Gp{
+button{
+    background-color: goldenrod;
+}
+.calc-gp{
     float: right;
     background-color: goldenrod;
 }
-
-button{
+.add-course{
     background-color: goldenrod;
-    
+    position: relative;
+}
+.display{
+    background-color:goldenrod;
+    width: 450px;
+    height: 450px;
+    overflow-y: scroll;
+}
+.last-row{
+    background-color: darkslategrey;
+    width: 468px;  
+    height: 30px; 
 }

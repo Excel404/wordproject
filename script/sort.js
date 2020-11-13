@@ -93,9 +93,9 @@ function NewItem(){
 
         }
         let name = itemName.value;
-        result.innerHTML = 'You sold'+ ' '+ sumOfAbove50 + " " + name + "with a profit of " + totalProfit +'<br>' +
-        'You sold'+ ' '+ sumOfBelow50 + ' ' + name + "at a loss of " + totalLoss +'<br>'+
-        'You sold'+ ' '+ sumOfExactly50 + " " + name + "at no profit or loss";
+        result.innerHTML = 'You sold'+ ' '+ sumOfAbove50 + " " + name + " " + "with a profit of " + totalProfit +'<br>' +
+        'You sold'+ ' '+ sumOfBelow50 + ' ' + name + " " + "at a loss of " + totalLoss +'<br>'+
+        'You sold'+ ' '+ sumOfExactly50 + " " + name + " " + "at no profit or loss";
         
         
             

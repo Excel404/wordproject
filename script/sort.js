@@ -78,12 +78,12 @@ function NewItem(){
             let sum = parseInt(find.innerCol2.value)
             let costPrice = parseInt(unitCost.value)
             if (price > costPrice){
-                profit = price - costPrice;
+                profit = (price - costPrice)* sum;
                 sumOfAbove50 += sum ;
                 totalProfit += profit
             }
             else if(price < costPrice){
-                loss = costPrice - price;        
+                loss = (costPrice - price)* sum;        
                 sumOfBelow50 += sum;
                 totalLoss += loss;
             }
@@ -93,8 +93,8 @@ function NewItem(){
 
         }
         let name = itemName.value;
-        result.innerHTML = 'You sold'+ ' '+ sumOfAbove50 + " " + name + " " + "with a profit of " + totalProfit +"Naira" +'<br>' +
-        'You sold'+ ' '+ sumOfBelow50 + ' ' + name + " " + "at a loss of " + totalLoss + "Naira" +'<br>'+
+        result.innerHTML = 'You sold'+ ' '+ sumOfAbove50 + " " + name + " " + "with a profit of #" + totalProfit +'<br>' +
+        'You sold'+ ' '+ sumOfBelow50 + ' ' + name + " " + "at a loss of #" + totalLoss + '<br>'+
         'You sold'+ ' '+ sumOfExactly50 + " " + name + " " + "at no profit or loss";
         
         

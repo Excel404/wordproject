@@ -93,8 +93,8 @@ function NewItem(){
 
         }
         let name = itemName.value;
-        result.innerHTML = 'You sold'+ ' '+ sumOfAbove50 + " " + name + " " + "with a profit of " + totalProfit +'<br>' +
-        'You sold'+ ' '+ sumOfBelow50 + ' ' + name + " " + "at a loss of " + totalLoss +'<br>'+
+        result.innerHTML = 'You sold'+ ' '+ sumOfAbove50 + " " + name + " " + "with a profit of " + totalProfit +"Naira" +'<br>' +
+        'You sold'+ ' '+ sumOfBelow50 + ' ' + name + " " + "at a loss of " + totalLoss + "Naira" +'<br>'+
         'You sold'+ ' '+ sumOfExactly50 + " " + name + " " + "at no profit or loss";
         
         

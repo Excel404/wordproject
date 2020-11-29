@@ -1,10 +1,53 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel ="stylesheet" type="text/css" href="style/word.css" >
-    
+
     </head>
     <body>
+        <div id =  'Word-interfacE' class = 'word-interface'>
+            <div id =  'Top-baR' class = 'top-bar' >
+                <i id = "save" class = 'fa fa-save'></i>
+                <span><i id = "undo" class ="fa fa-undo"></i><i class = 'fa fa-caret-down'></i></span>
+                <i id = "repeat" class= "fa fa-repeat"></i>
+                <span class = "document"> Document 1</span>
+                <i id = "question" class = "fa fa-question"></i>
+                <i id = "minimize" class = "fa fa-minus"></i>
+                <i id = "maximize" class = "fa fa-window-maximize"></i>
+                <i id = "close" class = "fa fa-times"></i>
+            </div>
+            <div id =  'Tool-baR' class = 'tool-bar'>
+                <span id = 'FilE' class = 'file'>FILE</span>
+                <a id = 'HomE' class = 'home'>HOME</a>
+                <a id = 'InserT' class = 'insert'>INSERT</a>
+                <a id = 'DesigN'class = 'design'>DESIGN</a>
+                <a id = 'Page-layouT' class = 'page-layout'>PAGE LAYOUT</a>
+                <a id = 'ReferenceS' class = 'references'>REFERENCES</a>
+                <a id = 'MailingS' class = 'mailings'>MAILINGS</a>
+                <a id = 'RevieW' class = 'review'>REVIEW</a>
+                <a id = 'VieW' class = 'view'>VIEW</a>
+
+            </div>
+            <div id =  'Menu-baR' class = 'menu-bar'>
+                <div id = 'Home-interfacE' class = 'home-interface'>
+                    <span id = 'Case-icoN' class ='case-icon'>Aa</span>
+                    <a><span id = 'Bold-icoN' class ='bold-icon'><b>B</b></span></a>
+                    <span id = 'ReplacE' class ='replace'>Replace</span>
+                </div>
+            </div>
+            <textarea id =  'Text-areA' class = 'text-area'></textarea>
+            
+            <div id =  'Replace-interfacE' class = 'replace-interface'>
+                <div id =  'Replace-top-baR' class = 'replace-top-bar'></div>
+                <span id =  'Find-labeL' class = 'find-label'>Find What:</span>
+                <input id =  'Find-boX' class = 'find-box' type ='text'>
+                <span id =  'Replace-labeL' class = 'replace-label'>Replace What</span>
+                <input id =  'Replace-boX' class = 'replace-box' type ='text'>
+                <button id =  'Replace-buttoN' class = 'replace-button'>Replace</button>
+                <button id =  'Replace-all-buttoN' class = 'replace-all-button'>Replace All</button>
+            </div>
+        </div>
         <script src="script/word.js" type ="text/javascript"></script>
     </body>
 </html>
